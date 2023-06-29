@@ -1,0 +1,24 @@
+package com.employee;
+
+public class Employee {
+	Employee(){
+		System.out.println("Created");
+	}
+	private int empId;
+	protected void finalize() {
+		System.out.println("Object is destroyed"+this);
+	}
+	public static void main(String [] args)  {
+		Employee e=new Employee();
+		e=null;
+		
+		Employee e1=new Employee();
+		Employee e2=new Employee();
+		e1=e2;
+		new Employee();
+		System.gc();
+
+	}
+	
+	
+}
